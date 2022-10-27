@@ -9,6 +9,7 @@
         "barryvdh/laravel-debugbar": "~3.5",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "hieu-le/active": "^8.0",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
