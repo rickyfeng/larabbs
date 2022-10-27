@@ -12,7 +12,11 @@ class TopicFactory extends Factory
     public function definition()
     {
         return [
-            // $this->faker->name,
+            'title'     => $this->faker->sentence(),
+            'body'      => $this->faker->text(),
+            'excerpt'   => $this->faker->sentence(),
+            'user_id'   => $this->faker->randomElement([1,2,3,4,5,6,7,8,9,10]),
+            'category_id' => $this->faker->randomElement([1,2,3,4]),
         ];
     }
 }
