@@ -21,6 +21,7 @@
         "overtrue/laravel-lang": "~4.0",
         "overtrue/pinyin": "~4.0",
         "spatie/laravel-permission": "~3.0",
+        "summerblue/administrator": "8.*",
         "summerblue/generator": "8.*",
         "viacreative/sudo-su": "~1.1"
     },
