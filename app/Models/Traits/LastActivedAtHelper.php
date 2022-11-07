@@ -2,10 +2,10 @@
 
 namespace App\Models\Traits;
 
-use Illuminate\Supper\Facades\Redis;
+use Illuminate\Support\Facades\Redis;
 use Carbon\Carbon;
 
-trait LastActivedHelper
+trait LastActivedAtHelper
 {
     protected $hash_prefix = 'larabbs_last_actived_at';
     protected $field_pref = 'user_';
@@ -27,8 +27,13 @@ trait LastActivedHelper
 
     public function syncUserActivedAt()
     {
+        // 获取昨天的日期，格式如：2017-10-21
+        $yesterday_date = Carbon::yesterday()->toDateString();
+        // test
+        // $yesterday_date = Carbon::now()->toDateString();
+
         // 获取昨日的哈希表名称，如：larabbs_last_actived_at_2017-10-21
-        $hash = $this->getHashFromDateString(Carbon::yesterday()->toDateString());
+        $hash = $this->getHashFromDateString($yesterday_date);
 
         // 从 Redis 中获取所有哈希表里的数据
         $dates = Redis::hGetAll($hash);
